@@ -117,7 +117,7 @@ function tileMatrixValue(option) {
         if (option[i].TileMatrixSet === "EPSG:900913") {
             if (option[i].TileMatrixSetLimits) {
                 const inner = option[i].TileMatrixSetLimits.TileMatrixLimits;
-                for (let ii = 0; ii < inner.length; i++) {
+                for (let ii = 0; ii < inner.length; ii++) {
                     return inner[ii].TileMatrix;
                 }
             }
