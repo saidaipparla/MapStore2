@@ -5,12 +5,24 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
+ /**
+  * Module representing ToggleButton
+  * @module web/client/components/buttons/ToggleButton
+  */
 var React = require('react');
 var {Button, Glyphicon, OverlayTrigger} = require('react-bootstrap');
 var ImageButton = require('./ImageButton');
-
+/* @class */
+/**
+ * ToggleButton, for enable or disable
+ * @namespace ToggleButton
+ */
 var ToggleButton = React.createClass({
+    /**
+     * @memberof ToggleButton
+     * @prop {bool} propTypes.pressed - the status of ToggleButton
+     * @prop {func} propTypes.onClick - the action of ToggleButton
+     */
     propTypes: {
         id: React.PropTypes.string,
         btnConfig: React.PropTypes.object,
@@ -38,6 +50,7 @@ var ToggleButton = React.createClass({
             defaultStyle: 'default'
         };
     },
+    /* for ToggleButton Action */
     onClick() {
         this.props.onClick(!this.props.pressed);
     },
@@ -63,6 +76,12 @@ var ToggleButton = React.createClass({
             </OverlayTrigger>
         );
     },
+    /**
+     * Renders the component.
+     *
+     * @memberof ToggleButton
+     * @return {object} - HTML markup for the component
+     */
     render() {
         var retval;
         var btn = this.props.btnType === 'normal' ? this.renderNormalButton() : this.renderImageButton();

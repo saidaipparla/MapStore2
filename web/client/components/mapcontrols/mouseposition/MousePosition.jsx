@@ -5,6 +5,10 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
+ /**
+  * Module representing mousePosition
+  * @module web/client/components/mapcontrols/mouseposition/MousePosition
+  */
 const React = require('react');
 const proj4js = require('proj4');
 const {Glyphicon, Button} = require('react-bootstrap');
@@ -12,10 +16,15 @@ const CopyToClipboard = require('react-copy-to-clipboard');
 const CoordinatesUtils = require('../../../utils/CoordinatesUtils');
 const MousePositionLabelDMS = require('./MousePositionLabelDMS');
 const MousePositionLabelYX = require('./MousePositionLabelYX');
-
+/* required css for mousePosition */
 require('./mousePosition.css');
 
 let MousePosition = React.createClass({
+    /**
+     * @memberof MousePosition
+     * @prop {string} propTypes.crs - Coordinate Reference Systems
+     * @prop {bool} propTypes.enabled - the state of ToggleButton
+     */
     propTypes: {
         id: React.PropTypes.string,
         mousePosition: React.PropTypes.object,
@@ -65,6 +74,12 @@ let MousePosition = React.createClass({
     getTemplateComponent() {
         return (this.getUnits(this.props.crs) === "degrees") ? this.props.degreesTemplate : this.props.projectedTemplate;
     },
+    /**
+     * Renders the component.
+     *
+     * @memberof MousePosition
+     * @return {object} - HTML markup for the component
+     */
     render() {
         let Template = (this.props.mousePosition) ? this.getTemplateComponent() : null;
         if (this.props.enabled && Template) {

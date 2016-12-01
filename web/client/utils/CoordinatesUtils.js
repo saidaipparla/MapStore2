@@ -5,6 +5,11 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
+ /**
+  * Module representing CoordinatesUtils
+  * @module web/client/utils/CoordinatesUtils
+  * @see module:web/client/utils/CoordinatesUtils
+  */
 var Proj4js = require('proj4');
 var assign = require('object-assign');
 var {isArray, flattenDeep, chunk} = require('lodash');

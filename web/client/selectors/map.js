@@ -5,16 +5,20 @@
 * This source code is licensed under the BSD-style license found in the
 * LICENSE file in the root directory of this source tree.
 */
-
+/**
+ * Module representing selector of mousePosition
+ * @module web/client/selector/map
+ */
 const CoordinatesUtils = require('../utils/CoordinatesUtils');
 const MapUtils = require('../utils/MapUtils');
 const {createSelector} = require('reselect');
 
 const mapSelector = (state) => (state.map && state.map.present) || (state.map) || (state.config && state.config.map) || null;
 
+/* for getting new map projection */
 const projectionSelector = createSelector([mapSelector], (map) => map && map.projection);
 
-
+/* for getting new map scales to serve to the map when they changed */
 const scalesSelector = createSelector(
     [projectionSelector],
     (projection) => {

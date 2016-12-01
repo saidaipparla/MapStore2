@@ -8,14 +8,27 @@
 const React = require('react');
 
 const {connect} = require('react-redux');
+/**
+ * mapSelector module
+ * @module selectors/map
+ * @see module:selectors/map
+ */
 const {mapSelector} = require('../selectors/map');
 const {createSelector} = require('reselect');
 
 const assign = require('object-assign');
-
+/**
+ * mousePositionAction module
+ * @module actions/mousePosition
+ * @see module:actions/mousePosition
+ */
 const {changeMousePositionCrs, changeMousePositionState} = require('../actions/mousePosition');
 
 const getDesiredPosition = (map, mousePosition, mapInfo) => {
+    /**
+    * A module representing a mousePosition.
+    * @exports getDesiredPosition
+    */
     if (mousePosition.showCenter && map) {
         return map.center;
     }
@@ -34,6 +47,7 @@ const getDesiredPosition = (map, mousePosition, mapInfo) => {
     return mousePosition.position;
 };
 
+/* check when mousePosition changes */
 const selector = createSelector([
     mapSelector,
     (state) => state.mousePosition || {},
@@ -44,6 +58,11 @@ const selector = createSelector([
     crs: mousePosition.crs || map && map.projection || 'EPSG:3857'
 }));
 
+/**
+ * locale module for translations
+ * @module locale/Message
+ * @see module:locale/Message
+ */
 const Message = require('./locale/Message');
 
 const CRSSelector = connect((state) => ({
@@ -52,6 +71,7 @@ const CRSSelector = connect((state) => ({
     onCRSChange: changeMousePositionCrs
 })(require('../components/mapcontrols/mouseposition/CRSSelector'));
 
+/* setting state of mousePosition */
 const MousePositionButton = connect((state) => ({
     pressed: state.mousePosition && state.mousePosition.enabled,
     active: state.mousePosition && state.mousePosition.enabled,
@@ -63,6 +83,11 @@ const MousePositionButton = connect((state) => ({
     onClick: changeMousePositionState
 })(require('../components/buttons/ToggleButton'));
 
+/**
+ * MousePosition module
+ * @module components/mapcontrols/mouseposition/MousePosition
+ * @see module:components/mapcontrols/mouseposition/MousePosition
+ */
 const MousePositionPlugin = connect(selector)(require('../components/mapcontrols/mouseposition/MousePosition'));
 
 module.exports = {
@@ -85,5 +110,10 @@ module.exports = {
             position: 2
         }
     }),
+    /**
+     * MousePositionReducer module
+     * @module reducers/mousePosition
+     * @see module:reducers/mousePositions
+     */
     reducers: {mousePosition: require('../reducers/mousePosition')}
 };
