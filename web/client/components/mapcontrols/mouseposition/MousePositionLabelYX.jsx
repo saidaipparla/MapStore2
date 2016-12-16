@@ -5,19 +5,38 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
+ /**
+   * MousePositionLabelYX
+   * @overview MousePositionLabelYX component.
+   * @namespace MousePositionLabelYX
+   * @module MousePositionLabelYX
+   * @requires react
+   * @requires react-bootstrap
+   * @requires react-intl
+   */
 var React = require('react');
 var BootstrapReact = require('react-bootstrap');
 var Label = BootstrapReact.Label;
 var ReactIntl = require('react-intl');
 var FormattedNumber = ReactIntl.FormattedNumber;
-
+/** @class*/
 var MousePositionLabelYX = React.createClass({
+    /**
+    *
+    * @prop {number} propTypes.x - current x
+    * @prop {number} propTypes.y - current y
+    * @default
+    */
     propTypes: {
         position: React.PropTypes.shape({
             x: React.PropTypes.number,
             y: React.PropTypes.number
         })
     },
+    /**
+    * Renders the component.
+    *@return {object} - HTML markup for the component with new x and y of map
+    */
     render() {
         let format = {style: "decimal", minimumIntegerDigits: 2, maximumFractionDigits: 2, minimumFractionDigits: 2};
         return (

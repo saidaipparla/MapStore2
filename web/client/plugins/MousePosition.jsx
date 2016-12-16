@@ -5,6 +5,24 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
+ /**
+   * MousePositionPlugin
+   * @overview For detecting MousePosition On Map and display its x and y coordinates.
+   * @name MousePositionPlugin module
+   * @module MousePositionPlugin
+   * @requires react
+   * @requires react-redux
+   * @requires selectors/map
+   * @requires reselect
+   * @requires object-assign
+   * @requires actions/mousePosition
+   * @requires reducers/mousePosition
+   * @requires locale/Message
+   * @requires CRSSelector
+   * @requires MousePosition
+   * @requires ToggleButton
+   *
+   */
 const React = require('react');
 
 const {connect} = require('react-redux');
@@ -14,7 +32,13 @@ const {createSelector} = require('reselect');
 const assign = require('object-assign');
 
 const {changeMousePositionCrs, changeMousePositionState} = require('../actions/mousePosition');
-
+/** to get the desiredposition
+ * @function getDesiredPosition
+ * @param {object} map - map object.
+ * @param {object} mousePosition - current position on map.
+ * @param {object} mapInfo - request, response, showmarker
+ * @return {object} position - {crs, pixel:{x, y}, x, y}
+ */
 const getDesiredPosition = (map, mousePosition, mapInfo) => {
     if (mousePosition.showCenter && map) {
         return map.center;
@@ -33,7 +57,9 @@ const getDesiredPosition = (map, mousePosition, mapInfo) => {
     }
     return mousePosition.position;
 };
-
+/**
+ * check when mousePosition changes
+ */
 const selector = createSelector([
     mapSelector,
     (state) => state.mousePosition || {},
@@ -44,14 +70,25 @@ const selector = createSelector([
     crs: mousePosition.crs || map && map.projection || 'EPSG:3857'
 }));
 
+/**
+* For getting localized object
+*/
 const Message = require('./locale/Message');
-
+/**
+ * For checking when CRSSelector changes
+*/
 const CRSSelector = connect((state) => ({
     crs: state.mousePosition && state.mousePosition.crs || state.map && state.map.present && state.map.present.projection || 'EPSG:3857'
 }), {
     onCRSChange: changeMousePositionCrs
 })(require('../components/mapcontrols/mouseposition/CRSSelector'));
-
+/**
+* for setting state to show or hide mousePosition
+* @param {object} state - mousePosition.
+* @prop {string} pressedStyle - button should take "default" as default
+* @prop {string} defaultStyle - button should be "primary" as default
+* @prop {object} btnConfig - button should be "small" as default
+*/
 const MousePositionButton = connect((state) => ({
     pressed: state.mousePosition && state.mousePosition.enabled,
     active: state.mousePosition && state.mousePosition.enabled,

@@ -5,13 +5,34 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
+ /**
+  * CRSSelector
+  * @overview CRSSelector component.
+  * @namespace CRSSelector
+  * @module CRSSelector
+  * @requires react
+  * @requires react-bootstrap
+  * @requires utils/CoordinatesUtils
+  * @requires ImageButton
+  */
 var React = require('react');
 var ReactDOM = require('react-dom');
 var BootstrapReact = require('react-bootstrap');
 var {Input} = BootstrapReact;
 var CoordinatesUtils = require('../../../utils/CoordinatesUtils');
-
+/** @class */
 let CRSSelector = React.createClass({
+    /**
+    *
+    * @prop {string} propTypes.id - unique id
+    * @prop {object} propTypes.inputProps - list of crs list
+    * @prop {object} propTypes.availableCRS - availableCRS list
+    * @prop {string} propTypes.crs - default or dynamic crs value
+    * @prop {bool} propTypes.enabled - button enabled or not
+    * @prop {func} propTypes.onCRSChange - action of CRS change
+    * @prop {bool} propTypes.useRawInput - useRawInput status
+    * @default
+    */
     propTypes: {
         id: React.PropTypes.string,
         inputProps: React.PropTypes.object,
@@ -23,14 +44,24 @@ let CRSSelector = React.createClass({
     },
     getDefaultProps() {
         return {
+             /** @default "mapstore-crsselector" */
             id: "mapstore-crsselector",
+            /** @default CoordinatesUtils.getAvailableCRS() */
             availableCRS: CoordinatesUtils.getAvailableCRS(),
+            /** @default null */
             crs: null,
+             /** @default {} */
             onCRSChange: function() {},
+            /** @default false */
             enabled: false,
+             /** @default false */
             useRawInput: false
         };
     },
+    /**
+     * Renders the component.
+     *@return {object} - HTML markup for the component
+     */
     render() {
         var val;
         var label;
@@ -66,6 +97,11 @@ let CRSSelector = React.createClass({
         }
         return null;
     },
+    /** for launchNewCRSAction
+   * @function launchNewCRSAction
+   * @param {object} ev - changed CRSSelector configuration
+   * @return {object} launchNewCRSAction - latest CRSSelector
+   */
     launchNewCRSAction(ev) {
         if (this.props.useRawInput) {
             this.props.onCRSChange(ev.target.value);

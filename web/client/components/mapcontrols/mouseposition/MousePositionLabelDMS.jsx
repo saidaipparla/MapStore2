@@ -5,19 +5,39 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
+ /**
+  * MousePositionLabelDMS
+  * @overview MousePositionLabelDMS component.
+  * @namespace MousePositionLabelDMS
+  * @module MousePositionLabelDMS
+  * @requires react
+  * @requires react-bootstrap
+  * @requires react-intl
+  */
 var React = require('react');
 var BootstrapReact = require('react-bootstrap');
 var Label = BootstrapReact.Label;
 var ReactIntl = require('react-intl');
 var FormattedNumber = ReactIntl.FormattedNumber;
-
+/** @class*/
 var MousePositionLabelDMS = React.createClass({
+    /**
+     *
+     * @prop {number} propTypes.lng - current longitude
+     * @prop {number} propTypes.lat - current latitude
+     * @default
+     */
     propTypes: {
         position: React.PropTypes.shape({
             lng: React.PropTypes.number,
             lat: React.PropTypes.number
         })
     },
+    /** for getPositionValues
+    * @function getPositionValues
+    * @param {object} mPos - take current lat and lng as input
+    * @return {object} getPositionValues - return new position object after calculations
+    */
     getPositionValues(mPos) {
         let {lng, lat} = (mPos) ? mPos : [null, null];
         let [latM, lngM] = [(lat % 1) * 60, (lng % 1) * 60];
@@ -31,6 +51,10 @@ var MousePositionLabelDMS = React.createClass({
             lngS: Math.abs(lngS)
         };
     },
+    /**
+     * Renders the component.
+     *@return {object} - HTML markup for the component
+     */
     render() {
         let pos = this.getPositionValues(this.props.position);
         let integerFormat = {style: "decimal", minimumIntegerDigits: 2, maximumFractionDigits: 0};

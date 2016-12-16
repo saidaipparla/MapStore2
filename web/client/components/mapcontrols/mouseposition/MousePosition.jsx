@@ -5,6 +5,20 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
+ /**
+  * MousePosition
+  * @overview MousePosition component.
+  * @namespace MousePosition
+  * @module MousePosition
+  * @requires react
+  * @requires proj4
+  * @requires react-bootstrap
+  * @requires react-copy-to-clipboard
+  * @requires utils/CoordinatesUtils
+  * @requires MousePositionLabelDMS
+  * @requires MousePositionLabelYX
+  * @requires mousePosition.css
+  */
 const React = require('react');
 const proj4js = require('proj4');
 const {Glyphicon, Button} = require('react-bootstrap');
@@ -14,8 +28,23 @@ const MousePositionLabelDMS = require('./MousePositionLabelDMS');
 const MousePositionLabelYX = require('./MousePositionLabelYX');
 
 require('./mousePosition.css');
-
+/** @class*/
 let MousePosition = React.createClass({
+    /**
+     *
+     * @prop {string} propTypes.id - unique id
+     * @prop {object} propTypes.mousePosition - mousePosition object
+     * @prop {string} propTypes.crs - current CRS
+     * @prop {bool} propTypes.enabled - status of ToggleButton
+     * @prop {object | func} degreesTemplate - position object
+     * @prop {object | func} projectedTemplate - x and y of mapposition
+     * @prop {object} propTypes.style - default or dynamic style
+     * @prop {bool} propTypes.copyToClipboardEnabled - copying value to clipboard status
+     * @prop {string} propTypes.glyphicon - icon text
+     * @prop {large | medium | small | xsmall} btnSize - button sizes
+     * @prop {func} propTypes.onCopy - onecopying to clipboard
+     * @default
+     */
     propTypes: {
         id: React.PropTypes.string,
         mousePosition: React.PropTypes.object,
@@ -44,9 +73,18 @@ let MousePosition = React.createClass({
             onCopy: () => {}
         };
     },
+    /** for getUnits
+    * @function getUnits
+    * @param {object} crs - current crs configuration
+    * @return {object} getUnits - return new projection CRS object
+    */
     getUnits(crs) {
         return proj4js.defs(crs).units;
     },
+    /** for getPosition
+    * @function getPosition
+    * @return {object} getPosition - return position x and y
+    */
     getPosition() {
         let {x, y} = this.props.mousePosition ? this.props.mousePosition : [null, null];
         if (!x && !y) {
@@ -61,10 +99,17 @@ let MousePosition = React.createClass({
         }
         return {x, y};
     },
-
+    /** for getTemplateComponent
+   * @function getTemplateComponent
+   * @return {object} getTemplateComponent - new projection object with both crs and x and y
+   */
     getTemplateComponent() {
         return (this.getUnits(this.props.crs) === "degrees") ? this.props.degreesTemplate : this.props.projectedTemplate;
     },
+    /**
+     * Renders the component.
+     *@return {object} - HTML markup for the component
+     */
     render() {
         let Template = (this.props.mousePosition) ? this.getTemplateComponent() : null;
         if (this.props.enabled && Template) {
