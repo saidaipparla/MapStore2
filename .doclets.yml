@@ -1,5 +1,5 @@
-dir: web/client/components/
+dir: web/client
 articles:
   - Mapstore2: README.md
 branches:
- 	- doclets_test
+  - doclets_test
