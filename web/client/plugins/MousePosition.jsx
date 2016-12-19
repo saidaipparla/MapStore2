@@ -7,13 +7,13 @@
  */
  /**
   * This is a root model for DLClass
-  * @module plugins/MousePositionPlugin
+  * @module plugins.MousePositionPlugin
   * @namespace
   */
  /**
    * @overview For detecting MousePosition On Map and display its x and y coordinates.
    * @name MousePositionPlugin module
-   * @module MousePositionPlugin
+   * @module plugins.MousePositionPlugin
    * @requires react
    * @requires react-redux
    * @requires selectors/map
