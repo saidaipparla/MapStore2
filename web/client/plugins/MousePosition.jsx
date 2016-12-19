@@ -9,7 +9,7 @@
    * Plugins
    * @overview For detecting MousePosition On Map and display its x and y coordinates.
    * @name MousePositionPlugin module
-   * @module Plugins/MousePositionPlugin
+   * @module  MousePositionPlugin
    * @requires react
    * @requires react-redux
    * @requires selectors/map
