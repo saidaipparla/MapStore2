@@ -6,10 +6,10 @@
  * LICENSE file in the root directory of this source tree.
  */
  /**
-   * MousePositionPlugin
+   * Plugins
    * @overview For detecting MousePosition On Map and display its x and y coordinates.
    * @name MousePositionPlugin module
-   * @module MousePositionPlugin
+   * @module Plugins/MousePositionPlugin
    * @requires react
    * @requires react-redux
    * @requires selectors/map
@@ -33,6 +33,9 @@ const assign = require('object-assign');
 
 const {changeMousePositionCrs, changeMousePositionState} = require('../actions/mousePosition');
 /** to get the desiredposition
+ * @example
+ * getDesiredPosition("map object", "current position on map", "req,res,showmarker")
+ * // returns '{crs, pixel:{x, y}, x, y}'
  * @function getDesiredPosition
  * @param {object} map - map object.
  * @param {object} mousePosition - current position on map.
@@ -59,6 +62,20 @@ const getDesiredPosition = (map, mousePosition, mapInfo) => {
 };
 /**
  * check when mousePosition changes
+ */
+/**
+ * This is just a constant.
+ * You can attach interactive playgrounds with the @playground tag.
+ * You can require any npm module and write real programs.
+ *
+ * @constant {string}
+ * @default
+ *
+ * @playground
+ * // Testing tonicdev
+ * var numbers = require('numbers')
+ * var x = numbers.calculus.Riemann(Math.sin, -2, 4, 200)
+ * x++
  */
 const selector = createSelector([
     mapSelector,
