@@ -20,7 +20,8 @@
    * @requires CRSSelector
    * @requires MousePosition
    * @requires ToggleButton
-   *
+   * @class
+   * @memberof module:plugins
    */
 const React = require('react');
 
