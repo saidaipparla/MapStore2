@@ -22,7 +22,8 @@ const assign = require('object-assign');
 const {changeMousePositionCrs, changeMousePositionState} = require('../actions/mousePosition');
 /**
   * The label to display in the form.
-  * @return {object}
+  * @return {string}
+  * @member
   */
 const getDesiredPosition = (map, mousePosition, mapInfo) => {
     if (mousePosition.showCenter && map) {
