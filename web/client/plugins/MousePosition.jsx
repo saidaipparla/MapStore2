@@ -9,7 +9,6 @@
    * @overview For detecting MousePosition On Map and display its x and y coordinates.
    * @name MousePosition
    * @module MousePositionPlugin
-   * @class
    * @memberof module:plugins
    */
 const React = require('react');
