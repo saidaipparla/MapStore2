@@ -8,7 +8,7 @@
  /**
    * some description goes here
    * @name MousePosition
-   * @class MousePosition
+   * @class
    * @memberof module:plugins
    */
 const React = require('react');
@@ -21,7 +21,6 @@ const assign = require('object-assign');
 
 const {changeMousePositionCrs, changeMousePositionState} = require('../actions/mousePosition');
 /** to get the desiredposition
- * @memberof class:MousePosition
  * @example
  * getDesiredPosition("map object", "current position on map", "req,res,showmarker")
  * // returns '{crs, pixel:{x, y}, x, y}'
@@ -30,6 +29,7 @@ const {changeMousePositionCrs, changeMousePositionState} = require('../actions/m
  * @param {object} mousePosition - current position on map.
  * @param {object} mapInfo - request, response, showmarker
  * @return {object} position - {crs, pixel:{x, y}, x, y}
+ * @member
  */
 const getDesiredPosition = (map, mousePosition, mapInfo) => {
     if (mousePosition.showCenter && map) {
