@@ -5,21 +5,16 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
- /**
-   * MousePositionLabelYX
-   * @overview MousePositionLabelYX component.
-   * @namespace MousePositionLabelYX
-   * @module MousePositionLabelYX
-   * @requires react
-   * @requires react-bootstrap
-   * @requires react-intl
-   */
 var React = require('react');
 var BootstrapReact = require('react-bootstrap');
 var Label = BootstrapReact.Label;
 var ReactIntl = require('react-intl');
 var FormattedNumber = ReactIntl.FormattedNumber;
-/** @class*/
+/**
+* @name MousePositionLabelYX
+* @class
+* @memberof module:components
+*/
 var MousePositionLabelYX = React.createClass({
     /**
     *
