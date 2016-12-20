@@ -8,6 +8,7 @@
  /**
  * @overview list of plugins used for mapstore2
  * @name plugins
+ * @class
  * @module plugins
  */
 module.exports = {
