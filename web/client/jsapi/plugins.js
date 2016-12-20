@@ -6,7 +6,8 @@
  * LICENSE file in the root directory of this source tree.
  */
  /**
- *
+ * @overview list of plugins used for mapstore2
+ * @name plugins
  * @module plugins
  */
 module.exports = {
