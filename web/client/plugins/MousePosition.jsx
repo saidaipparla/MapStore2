@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
  /**
-   * @overview For detecting MousePosition On Map and display its x and y coordinates.
+   * @overview For detecting MousePosition On Map and display its x and y coordinates
    * @name MousePosition
    * @class
    * @memberof module:plugins

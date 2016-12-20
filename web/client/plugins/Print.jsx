@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
  /**
-   * @overview For printing the map.
+   * @overview For printing the map
    * @name PrintPlugin
    * @class
    * @memberof module:plugins
