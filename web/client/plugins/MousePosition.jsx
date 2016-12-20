@@ -8,6 +8,7 @@
  /**
    * @overview For detecting MousePosition On Map and display its x and y coordinates.
    * @name MousePositionPlugin module
+   * @module MousePositionPlugin
    * @requires react
    * @requires react-redux
    * @requires selectors/map
@@ -19,8 +20,8 @@
    * @requires CRSSelector
    * @requires MousePosition
    * @requires ToggleButton
-   * @class
-   * @memberof module:plugins
+   * @class plugins
+   * @memberof module:web/client/plugins
    */
 const React = require('react');
 
