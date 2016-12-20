@@ -5,20 +5,6 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
- /**
-  * MousePosition
-  * @overview MousePosition component.
-  * @namespace MousePosition
-  * @module MousePosition
-  * @requires react
-  * @requires proj4
-  * @requires react-bootstrap
-  * @requires react-copy-to-clipboard
-  * @requires utils/CoordinatesUtils
-  * @requires MousePositionLabelDMS
-  * @requires MousePositionLabelYX
-  * @requires mousePosition.css
-  */
 const React = require('react');
 const proj4js = require('proj4');
 const {Glyphicon, Button} = require('react-bootstrap');
@@ -28,7 +14,12 @@ const MousePositionLabelDMS = require('./MousePositionLabelDMS');
 const MousePositionLabelYX = require('./MousePositionLabelYX');
 
 require('./mousePosition.css');
-/** @class*/
+/**
+* CRSSelector to get updated Coordinates
+* @name MousePosition
+* @class
+* @memberof module:components
+*/
 let MousePosition = React.createClass({
     /**
      *

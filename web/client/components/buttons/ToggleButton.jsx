@@ -5,19 +5,15 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
- /**
-   * ToggleButton
-   * @overview ToggleButton component.
-   * @namespace ToggleButton
-   * @module ToggleButton
-   * @requires react
-   * @requires react-bootstrap
-   * @requires ImageButton
-   */
 var React = require('react');
 var {Button, Glyphicon, OverlayTrigger} = require('react-bootstrap');
 var ImageButton = require('./ImageButton');
-/** @class*/
+/**
+* some description goes here
+* @name ToggleButton
+* @class
+* @memberof module:components
+*/
 var ToggleButton = React.createClass({
     /**
      *

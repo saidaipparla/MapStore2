@@ -5,22 +5,17 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
- /**
-  * CRSSelector
-  * @overview CRSSelector component.
-  * @namespace CRSSelector
-  * @module CRSSelector
-  * @requires react
-  * @requires react-bootstrap
-  * @requires utils/CoordinatesUtils
-  * @requires ImageButton
-  */
 var React = require('react');
 var ReactDOM = require('react-dom');
 var BootstrapReact = require('react-bootstrap');
 var {Input} = BootstrapReact;
 var CoordinatesUtils = require('../../../utils/CoordinatesUtils');
-/** @class */
+/**
+* CRSSelector to get updated Coordinates
+* @name CRSSelector
+* @class
+* @memberof module:components
+*/
 let CRSSelector = React.createClass({
     /**
     *

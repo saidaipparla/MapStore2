@@ -5,21 +5,18 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
- /**
-  * MousePositionLabelDMS
-  * @overview MousePositionLabelDMS component.
-  * @namespace MousePositionLabelDMS
-  * @module MousePositionLabelDMS
-  * @requires react
-  * @requires react-bootstrap
-  * @requires react-intl
-  */
+
 var React = require('react');
 var BootstrapReact = require('react-bootstrap');
 var Label = BootstrapReact.Label;
 var ReactIntl = require('react-intl');
 var FormattedNumber = ReactIntl.FormattedNumber;
-/** @class*/
+/**
+* some description goes here
+* @name MousePositionLabelDMS
+* @class
+* @memberof module:components
+*/
 var MousePositionLabelDMS = React.createClass({
     /**
      *
