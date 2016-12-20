@@ -43,7 +43,7 @@ const getDesiredPosition = (map, mousePosition, mapInfo) => {
   * Override to transform the property value before it is stored.
   *
   * @return Promise | String
-  * @member
+  * @memberof module:plugins:MousePosition:selector
   */
 const selector = createSelector([
     mapSelector,
