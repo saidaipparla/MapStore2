@@ -6,18 +6,38 @@
  * LICENSE file in the root directory of this source tree.
  */
  /**
- * Input view for URLs.
+ * For detecting MousePosition On Map and display its x and y coordinates
  *
- * @param {string[]} options.supportedHosts
- *   List of allowed url prefixes.
+ * @param {string}  cfg.id
+ * unique id
+ * @example
+ * id: "mapstore-mouseposition"
  *
- * @param {boolean} [options.required=false]
- *   Display an error if the url is blank.
+ * @param {string}  cfg.crs
+ * current CRS.
  *
- * @param {boolean} [options.permitHttps=false]
- *   Allow urls with https protocol.
+ * @param {object | func} cfg.degreesTemplate
+ * position object
  *
- * @see {@link module:pageflow/ui.pageflow.inputView pageflow.inputView} for further options
+ * @param {object | func} cfg.projectedTemplate
+ * x and y of mapposition
+ *
+ * @param {object}  cfg.style
+ * default or dynamic style
+ *
+ * @param {bool} [cfg.copyToClipboardEnabled=false]
+ * copying value to clipboard status
+ *
+ * @param {string}  cfg.glyphicon
+ * icon text
+ *
+ * @param {large | medium | small | xsmall}  cfg.btnSize
+ * button sizes
+ *
+ * @param {func}  cfg.onCopy
+ * onecopying to clipboard
+ *
+ * @see {@link module:components.MousePosition} for further options
  * @name MousePosition
  * @class
  * @memberof module:plugins
