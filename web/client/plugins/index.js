@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
  /**
- * @name pluginslist
+ * @name plugins
  * @module plugins
  */
 module.exports = {
