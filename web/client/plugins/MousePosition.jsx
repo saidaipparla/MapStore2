@@ -10,8 +10,6 @@
  *
  * @param {string}  cfg.id
  * unique id
- * @example
- * id: "mapstore-mouseposition"
  *
  * @param {string}  cfg.crs
  * current CRS.
@@ -36,6 +34,10 @@
  *
  * @param {func}  cfg.onCopy
  * onecopying to clipboard
+ *
+ * @example
+ * in local configuration you can pass like below the above Arguments
+ * "cfg": { "id": "mapstore-mouseposition", "btnSize": "small" }
  *
  * @see {@link module:components.MousePosition} for further options
  * @name MousePosition
