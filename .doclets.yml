@@ -1,4 +1,4 @@
-dir: web/client
+dir: web/client/plugins
 articles:
   - Mapstore2: README.md
 branches:

@@ -20,17 +20,10 @@ const {createSelector} = require('reselect');
 const assign = require('object-assign');
 
 const {changeMousePositionCrs, changeMousePositionState} = require('../actions/mousePosition');
-/** to get the desiredposition
- * @example
- * getDesiredPosition("map object", "current position on map", "req,res,showmarker")
- * // returns '{crs, pixel:{x, y}, x, y}'
- * @function getDesiredPosition
- * @param {object} map - map object.
- * @param {object} mousePosition - current position on map.
- * @param {object} mapInfo - request, response, showmarker
- * @return {object} position - {crs, pixel:{x, y}, x, y}
- * @member
- */
+/**
+  * The label to display in the form.
+  * @return {object}
+  */
 const getDesiredPosition = (map, mousePosition, mapInfo) => {
     if (mousePosition.showCenter && map) {
         return map.center;
@@ -49,23 +42,7 @@ const getDesiredPosition = (map, mousePosition, mapInfo) => {
     }
     return mousePosition.position;
 };
-/**
- * check when mousePosition changes
- */
-/**
- * This is just a constant.
- * You can attach interactive playgrounds with the @playground tag.
- * You can require any npm module and write real programs.
- *
- * @constant {string}
- * @default
- *
- * @playground
- * // Testing tonicdev
- * var numbers = require('numbers')
- * var x = numbers.calculus.Riemann(Math.sin, -2, 4, 200)
- * x++
- */
+
 const selector = createSelector([
     mapSelector,
     (state) => state.mousePosition || {},
@@ -76,25 +53,15 @@ const selector = createSelector([
     crs: mousePosition.crs || map && map.projection || 'EPSG:3857'
 }));
 
-/**
-* For getting localized object
-*/
+
 const Message = require('./locale/Message');
-/**
- * For checking when CRSSelector changes
-*/
+
 const CRSSelector = connect((state) => ({
     crs: state.mousePosition && state.mousePosition.crs || state.map && state.map.present && state.map.present.projection || 'EPSG:3857'
 }), {
     onCRSChange: changeMousePositionCrs
 })(require('../components/mapcontrols/mouseposition/CRSSelector'));
-/**
-* for setting state to show or hide mousePosition
-* @param {object} state - mousePosition.
-* @prop {string} pressedStyle - button should take "default" as default
-* @prop {string} defaultStyle - button should be "primary" as default
-* @prop {object} btnConfig - button should be "small" as default
-*/
+
 const MousePositionButton = connect((state) => ({
     pressed: state.mousePosition && state.mousePosition.enabled,
     active: state.mousePosition && state.mousePosition.enabled,

@@ -54,28 +54,9 @@ let CRSSelector = React.createClass({
         };
     },
     /**
-      * Returns an array of translation keys based on the
-      * `attributeTranslationKeyPrefixes` option and the given keyName.
-      *
-      * Combined with {@link
-      * module:pageflow/ui.pageflow.i18nUtils.findTranslation
-      * i18nUtils.findTranslation}, this can be used inside input views
-      * to obtain additional translations with the same logic as for
-      * labels and inline help texts.
-      *
-      *      pageflow.i18nUtils.findTranslation(this.attributeTranslationKeys('default_value'));
-      *
-      * @param {string} keyName
-      * Suffix to append to prefixes.
-      *
-      * @param {string} [options.fallbackPrefix]
-      *   Optional additional prefix to form a model based translation
-      *   key of the form `prefix.modelI18nKey.propertyName.keyName
-      *
-      * @return {string[]}
-      * @since 0.9
-      * @member
-      */
+     * Renders the component.
+     *@return {object} - HTML markup for the component
+     */
     render() {
         var val;
         var label;
