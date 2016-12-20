@@ -20,7 +20,7 @@ const {createSelector} = require('reselect');
 const assign = require('object-assign');
 
 const {changeMousePositionCrs, changeMousePositionState} = require('../actions/mousePosition');
-/** @lends module:plugins.MousePositionPluginw# */
+
 const getDesiredPosition = (map, mousePosition, mapInfo) => {
     if (mousePosition.showCenter && map) {
         return map.center;
@@ -39,12 +39,7 @@ const getDesiredPosition = (map, mousePosition, mapInfo) => {
     }
     return mousePosition.position;
 };
-/**
-  * Override to transform the property value before it is stored.
-  *
-  * @return Promise | String
-  * @memberof module:plugins:MousePosition:selector
-  */
+
 const selector = createSelector([
     mapSelector,
     (state) => state.mousePosition || {},
