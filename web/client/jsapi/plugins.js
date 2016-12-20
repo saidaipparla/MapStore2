@@ -5,7 +5,11 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
+/**
+* @overview list plugins used for mapstore2
+* @name plugins
+* @module plugins
+*/
 module.exports = {
     plugins: {
         MousePositionPlugin: require('../plugins/MousePosition'),
