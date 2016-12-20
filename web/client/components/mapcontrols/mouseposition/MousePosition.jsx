@@ -15,7 +15,7 @@ const MousePositionLabelYX = require('./MousePositionLabelYX');
 
 require('./mousePosition.css');
 /**
-* CRSSelector to get updated Coordinates
+* some description goes here
 * @name MousePosition
 * @class
 * @memberof module:components

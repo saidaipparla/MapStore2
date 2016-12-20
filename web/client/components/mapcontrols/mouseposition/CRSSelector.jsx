@@ -11,7 +11,7 @@ var BootstrapReact = require('react-bootstrap');
 var {Input} = BootstrapReact;
 var CoordinatesUtils = require('../../../utils/CoordinatesUtils');
 /**
-* CRSSelector to get updated Coordinates
+* some description goes here
 * @name CRSSelector
 * @class
 * @memberof module:components

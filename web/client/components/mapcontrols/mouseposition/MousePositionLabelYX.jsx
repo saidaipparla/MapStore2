@@ -11,6 +11,7 @@ var Label = BootstrapReact.Label;
 var ReactIntl = require('react-intl');
 var FormattedNumber = ReactIntl.FormattedNumber;
 /**
+* some description goes here
 * @name MousePositionLabelYX
 * @class
 * @memberof module:components

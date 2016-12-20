@@ -6,8 +6,9 @@
  * LICENSE file in the root directory of this source tree.
  */
  /**
+   * some description goes here
    * @name MousePosition
-   * @class
+   * @class MousePosition
    * @memberof module:plugins
    */
 const React = require('react');
@@ -20,6 +21,7 @@ const assign = require('object-assign');
 
 const {changeMousePositionCrs, changeMousePositionState} = require('../actions/mousePosition');
 /** to get the desiredposition
+ * @memberof class:MousePosition
  * @example
  * getDesiredPosition("map object", "current position on map", "req,res,showmarker")
  * // returns '{crs, pixel:{x, y}, x, y}'
