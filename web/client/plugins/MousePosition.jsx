@@ -6,11 +6,22 @@
  * LICENSE file in the root directory of this source tree.
  */
  /**
-   * some description goes here
-   * @name MousePosition
-   * @class
-   * @memberof module:plugins
-   */
+ * Input view for URLs.
+ *
+ * @param {string[]} options.supportedHosts
+ *   List of allowed url prefixes.
+ *
+ * @param {boolean} [options.required=false]
+ *   Display an error if the url is blank.
+ *
+ * @param {boolean} [options.permitHttps=false]
+ *   Allow urls with https protocol.
+ *
+ * @see {@link module:pageflow/ui.pageflow.inputView pageflow.inputView} for further options
+ * @name MousePosition
+ * @class
+ * @memberof module:plugins
+ */
 const React = require('react');
 
 const {connect} = require('react-redux');
