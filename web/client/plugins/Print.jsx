@@ -5,7 +5,12 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
+ /**
+   * @overview For printing the map.
+   * @name PrintPlugin
+   * @class
+   * @memberof module:plugins
+   */
 const React = require('react');
 const {connect} = require('react-redux');
 
