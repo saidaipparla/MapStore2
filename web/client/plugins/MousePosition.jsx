@@ -36,7 +36,7 @@
  * onecopying to clipboard
  *
  * @example
- * in local configuration you can pass like below the above Arguments
+ * with local configuration you can pass above Arguments like below
  * "cfg": { "id": "mapstore-mouseposition", "btnSize": "small" }
  *
  * @see {@link module:components.MousePosition} for further options
