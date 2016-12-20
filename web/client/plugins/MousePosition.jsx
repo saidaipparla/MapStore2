@@ -11,7 +11,7 @@
  * @param {string}  cfg.id
  * unique id
  *
- * @param {string}  cfg.crs
+ * @param {string}  [cfg.crs="EPSG:4326"]
  * current CRS.
  *
  * @param {object | func} cfg.degreesTemplate
@@ -26,13 +26,13 @@
  * @param {bool} [cfg.copyToClipboardEnabled=false]
  * copying value to clipboard status
  *
- * @param {string}  cfg.glyphicon
+ * @param {string}  [cfg.glyphicon="paste"]
  * icon text
  *
  * @param {large | medium | small | xsmall}  cfg.btnSize
  * button sizes
  *
- * @param {func}  cfg.onCopy
+ * @param {func}  [cfg.onCopy= () => {}]
  * onecopying to clipboard
  *
  * @example
