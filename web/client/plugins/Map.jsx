@@ -11,8 +11,11 @@
  * @param {string}  [cfg.mapType="leaflet"]
  * current user selected mapType
  *
- * @param {object}  cfg.map
- * current map object.
+ * @param {array}  cfg.tools
+ * current tools  array ['measurement', 'locate', 'overview', 'scalebar']
+ *
+ * @param {object}  cfg.toolsOptions
+ * toolsoptions object styleing information
  *
  * @param {string} [cfg.mapLoadingMessage= "map.loading"]
  * map preloading classname
