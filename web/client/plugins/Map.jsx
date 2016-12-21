@@ -5,7 +5,36 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
+ /**
+ * For displaying user selected map
+ *
+ * @param {string}  [cfg.mapType="leaflet"]
+ * unique map type
+ *
+ * @param {object}  cfg.map
+ * current map object.
+ *
+ * @param {string} [cfg.mapLoadingMessage= "map.loading"]
+ * map preloading classname
+ *
+ * @param {bool} cfg.loadingSpinner=true
+ * spinner icon configuration while map loading
+ *
+ * @param {object}  cfg.options
+ * supported tools object for maplugin
+ *
+ * @param {object} [cfg.actions={}]
+ * actions object for maprelated actions by user
+ *
+ * @example
+ * with local configuration you can pass above Arguments like below
+ * "cfg": { "mapType": "leaflet", "loadingSpinner": false }
+ *
+ * @see {@link module:components.MousePosition} for further options
+ * @name Map
+ * @class
+ * @memberof module:plugins
+ */
 const React = require('react');
 const {connect} = require('react-redux');
 const {createSelector} = require('reselect');
