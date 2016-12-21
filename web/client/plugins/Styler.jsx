@@ -9,6 +9,7 @@
  *
  * @class
  * @ignore
+ *
  */
 const React = require('react');
 const {connect} = require('react-redux');
@@ -245,7 +246,7 @@ const Styler = React.createClass({
         }
         return null;
     },
-    /* add a incremental value as layer parameter (to force invalidation of the cache) and clear the sldbody */
+    /** add a incremental value as layer parameter (to force invalidation of the cache) and clear the sldbody */
     clearLayerStyle() {
         this.props.changeLayerProperties(this.props.layer.id, { params: assign({}, this.props.layer.params, {SLD_BODY: null, _dc: this.state.counter})});
         this.setState({counter: this.state.counter + 1});
