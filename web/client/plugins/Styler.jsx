@@ -7,9 +7,8 @@
  */
  /**
  *
- * @name Styler
  * @class
- * @memberof module:plugins
+ * @ignore
  */
 const React = require('react');
 const {connect} = require('react-redux');
