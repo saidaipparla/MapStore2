@@ -9,7 +9,7 @@
  * For displaying user selected map
  *
  * @param {string}  [cfg.mapType="leaflet"]
- * unique map type
+ * current user selected mapType
  *
  * @param {object}  cfg.map
  * current map object.
@@ -30,7 +30,6 @@
  * with local configuration you can pass above Arguments like below
  * "cfg": { "mapType": "leaflet", "loadingSpinner": false }
  *
- * @see {@link module:components.MousePosition} for further options
  * @name Map
  * @class
  * @memberof module:plugins
