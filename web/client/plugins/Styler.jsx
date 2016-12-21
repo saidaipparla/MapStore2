@@ -7,8 +7,9 @@
  */
  /**
  *
+ * @name Styler
  * @class
- * @ignore
+ * @memberof module:plugins
  */
 const React = require('react');
 const {connect} = require('react-redux');
@@ -245,7 +246,7 @@ const Styler = React.createClass({
         }
         return null;
     },
-    /*
+    /**
      * add a incremental value as layer parameter (to force invalidation of the cache) and clear the sldbody
      */
     clearLayerStyle() {
