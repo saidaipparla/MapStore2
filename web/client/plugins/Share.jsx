@@ -5,7 +5,11 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
+ /**
+ *
+ * @class
+ * @ignore
+ */
  /************** DESCRIPTION OF COMPONENT **************
  The share plugin should provide functionalities to:
  1. Share the map on social networks: Facebook, Twitter (linkedin and Google+ is a plus)
