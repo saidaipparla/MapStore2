@@ -5,12 +5,6 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-/**
-*
-* @class
-* @name
-*
-*/
 const CHANGE_MOUSE_POSITION = 'CHANGE_MOUSE_POSITION';
 const CHANGE_MOUSE_POSITION_CRS = 'CHANGE_MOUSE_POSITION_CRS';
 const CHANGE_MOUSE_POSITION_STATE = 'CHANGE_MOUSE_POSITION_STATE';
